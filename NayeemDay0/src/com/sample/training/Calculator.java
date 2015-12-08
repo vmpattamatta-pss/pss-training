@@ -31,10 +31,18 @@ public class Calculator {
 			ret = intA * intB;
 			break;
 		case 4:
-			ret = intA / intB;
+			try {
+				ret = intA / intB;
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 			break;
 		case 5:
-			ret = intA % intB;
+			try {
+				ret = intA % intB;
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 			break;
 		default:
 			System.out.println("Invalid Operand Please specify a value between 1-5");

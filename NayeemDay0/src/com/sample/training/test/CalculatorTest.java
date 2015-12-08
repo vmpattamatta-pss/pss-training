@@ -8,30 +8,30 @@ import com.sample.training.Calculator;
 
 public class CalculatorTest {
 
-	private Calculator calc = new Calculator(20, 10);
+	private Calculator calc = new Calculator(20, 0);
 
 	@Test
 	public void testCalculateAdd() {
 		calc.setOp(1);
-		assertEquals(calc.calculate(), 30);
+		assertEquals(calc.calculate(), 20);
 	}
 
 	@Test
 	public void testCalculateSub() {
 		calc.setOp(2);
-		assertEquals(calc.calculate(), 10);
+		assertEquals(calc.calculate(), 20);
 	}
 
 	@Test
 	public void testCalculateMul() {
 		calc.setOp(3);
-		assertEquals(calc.calculate(), 200);
+		assertEquals(calc.calculate(), 0);
 	}
 
 	@Test
 	public void testCalculateDiv() {
 		calc.setOp(4);
-		assertEquals(calc.calculate(), 2);
+		assertEquals(calc.calculate(), 0);
 	}
 
 	@Test
