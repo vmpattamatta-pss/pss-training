@@ -14,6 +14,7 @@ import java.util.UUID;
 import com.mysql.jdbc.Driver;
 
 public class MySQLJDBCSample {
+
 	public static void main(String[] args) throws Exception {
 		MySQLJDBCSample sample = new MySQLJDBCSample();
 		sample.loadFile("C:\\Java\\io\\filesrc.txt");
