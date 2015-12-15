@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>NayeemDay6</display-name>
+	<servlet>
+		<servlet-name>Calc Servlet</servlet-name>
+		<servlet-class>com.sample.training.CalcQueryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Calc Servlet</servlet-name>
+		<url-pattern>/calcHtml</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Calc Jsp Servlet</servlet-name>
+		<servlet-class>com.sample.training.CalcJspServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Calc Jsp Servlet</servlet-name>
+		<url-pattern>/calcJsp</url-pattern>
+	</servlet-mapping>
+</web-app>

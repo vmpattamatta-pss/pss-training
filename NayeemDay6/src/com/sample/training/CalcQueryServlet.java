@@ -1,19 +1,25 @@
 package com.sample.training;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CalQueryServlet extends HttpServlet {
+/**
+ * Servlet implementation class CalcQueryServlet
+ */
+@WebServlet("/calcHtml")
+public class CalcQueryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Default constructor.
+	 * @see HttpServlet#HttpServlet()
 	 */
-	public CalQueryServlet() {
+	public CalcQueryServlet() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -22,8 +28,8 @@ public class CalQueryServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Integer intA = Integer.parseInt(request.getParameter("intA"));
-		Integer intB = Integer.parseInt(request.getParameter("intB"));
+		Integer intA = Integer.parseInt(request.getParameter("inpA"));
+		Integer intB = Integer.parseInt(request.getParameter("inpB"));
 		Integer op = Integer.parseInt(request.getParameter("op"));
 		Calculator cal = new Calculator(intA, intB, op);
 		response.getOutputStream()
