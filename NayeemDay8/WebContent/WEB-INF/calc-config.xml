@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	<managed-bean>
+		<managed-bean-name>calcJSFController</managed-bean-name>
+		<managed-bean-class>com.sample.training.CalcJSFController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>calcJSFModel</managed-bean-name>
+		<managed-bean-class>com.sample.training.CalcJSFModel</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/pages/input.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>addRes</from-outcome>
+			<to-view-id>/pages/addRes.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>mulRes</from-outcome>
+			<to-view-id>/pages/mulRes.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>divRes</from-outcome>
+			<to-view-id>/pages/divRes.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>subRes</from-outcome>
+			<to-view-id>/pages/subRes.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>modRes</from-outcome>
+			<to-view-id>/pages/modRes.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>goBack</from-outcome>
+			<to-view-id>/pages/input.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14520714616700" configfile="/NayeemDay8/WebContent/WEB-INF/calc-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pages/input.xhtml" id="pf14520716432221" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf14520716432222 pf14520716855384 pf14520716855385 pf14520716855386 pf145207393637012" inlinks="pf145207395813916" path="/pages/input.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/addRes.xhtml" x="312" y="216" id="pf14520716432223" referenceLink="//@navigationRule.1/@fromViewId|" inlinks="pf14520716432222" path="/pages/addRes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/modRes.xhtml" x="432" y="168" id="pf14520716855398" referenceLink="//@navigationRule.0/@navigationCase.4/@toViewId|" inlinks="pf14520716855384" path="/pages/modRes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/subRes.xhtml" x="420" y="72" id="pf14520716855399" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf14520716855385" path="/pages/subRes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/divRes.xhtml" x="36" y="216" id="pf145207168553910" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14520716855386" path="/pages/divRes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/mulRes.xhtml" id="pf145207393637114" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf145207393637012" path="/pages/mulRes.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf145207395813917" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf145207395813916" path="*"/>
+  <links id="pf14520716432222" target="pf14520716432223" source="pf14520716432221" outcome="addRes"/>
+  <links id="pf14520716855384" target="pf14520716855398" source="pf14520716432221" outcome="modRes"/>
+  <links id="pf14520716855385" target="pf14520716855399" source="pf14520716432221" outcome="subRes"/>
+  <links id="pf14520716855386" target="pf145207168553910" source="pf14520716432221" outcome="divRes"/>
+  <links id="pf145207393637012" target="pf145207393637114" source="pf14520716432221" outcome="mulRes"/>
+  <links id="pf145207395813916" target="pf14520716432221" source="pf145207395813917" outcome="goBack"/>
+</pageflow:Pageflow>
