@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet"
+	href="/NayeemDay9/javax.faces.resource/theme.css.faces?ln=primefaces-aristo" />
+<link type="text/css" rel="stylesheet"
+	href="/NayeemDay9/javax.faces.resource/primefaces.css.faces;jsessionid=C3gYf3yncYXmlm0LJRvMFZDYLWQr8HR2JOzwsf55.nayeem-pc?ln=primefaces&amp;v=5.3" />
+<script type="text/javascript"
+	src="/NayeemDay9/javax.faces.resource/jquery/jquery.js.faces;jsessionid=C3gYf3yncYXmlm0LJRvMFZDYLWQr8HR2JOzwsf55.nayeem-pc?ln=primefaces&amp;v=5.3"></script>
+<script type="text/javascript"
+	src="/NayeemDay9/javax.faces.resource/primefaces.js.faces;jsessionid=C3gYf3yncYXmlm0LJRvMFZDYLWQr8HR2JOzwsf55.nayeem-pc?ln=primefaces&amp;v=5.3"></script>
+<script type="text/javascript"
+	src="/NayeemDay9/javax.faces.resource/jquery/jquery-plugins.js.faces;jsessionid=C3gYf3yncYXmlm0LJRvMFZDYLWQr8HR2JOzwsf55.nayeem-pc?ln=primefaces&amp;v=5.3"></script>
+<script type="text/javascript">if(window.PrimeFaces){}</script>
+<title>PrimeFaces Calculator</title>
+</head>
+<body>
+	<form id="j_idt5" name="j_idt5" method="post"
+		action="/NayeemDay9/pf/calcPF.faces;jsessionid=C3gYf3yncYXmlm0LJRvMFZDYLWQr8HR2JOzwsf55.nayeem-pc"
+		enctype="application/x-www-form-urlencoded">
+		<input type="hidden" name="j_idt5" value="j_idt5" />
+		<table>
+			<tbody>
+				<tr>
+					<td><label id="j_idt5:j_idt8" class="ui-outputlabel ui-widget">Input
+							A</label></td>
+					<td><input id="j_idt5:inpA" name="j_idt5:inpA" type="text"
+						class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" />
+					<script id="j_idt5:inpA_s" type="text/javascript">PrimeFaces.cw("InputText","widget_j_idt5_inpA",{id:"j_idt5:inpA"});</script></td>
+				</tr>
+				<tr>
+					<td><label id="j_idt5:j_idt11"
+						class="ui-outputlabel ui-widget">Input B</label></td>
+					<td><input id="j_idt5:inpB" name="j_idt5:inpB" type="text"
+						class="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all" />
+					<script id="j_idt5:inpB_s" type="text/javascript">PrimeFaces.cw("InputText","widget_j_idt5_inpB",{id:"j_idt5:inpB"});</script></td>
+				</tr>
+				<tr>
+					<td><label id="j_idt5:j_idt14"
+						class="ui-outputlabel ui-widget">Operation</label></td>
+					<td><div id="j_idt5:j_idt16"
+							class="ui-selectonemenu ui-widget ui-state-default ui-corner-all">
+							<div class="ui-helper-hidden-accessible">
+								<input id="j_idt5:j_idt16_focus" name="j_idt5:j_idt16_focus"
+									type="text" autocomplete="off" role="combobox"
+									aria-haspopup="true" aria-expanded="false" />
+							</div>
+							<div class="ui-helper-hidden-accessible">
+								<select id="j_idt5:j_idt16_input" name="j_idt5:j_idt16_input"
+									tabindex="-1"
+									onchange="PrimeFaces.ab({s:&quot;j_idt5:j_idt16&quot;,e:&quot;change&quot;,p:&quot;j_idt5&quot;,u:&quot;j_idt5:resGrid&quot;});"><option
+										value="-1">Please Select</option>
+									<option value="1">Add</option>
+									<option value="2">Sub</option>
+									<option value="3">Mul</option>
+									<option value="4">Div</option>
+									<option value="5">Mod</option></select>
+							</div>
+							<label id="j_idt5:j_idt16_label"
+								class="ui-selectonemenu-label ui-inputfield ui-corner-all">&nbsp;</label>
+							<div
+								class="ui-selectonemenu-trigger ui-state-default ui-corner-right">
+								<span class="ui-icon ui-icon-triangle-1-s ui-c"></span>
+							</div>
+							<div id="j_idt5:j_idt16_panel"
+								class="ui-selectonemenu-panel ui-widget ui-widget-content ui-corner-all ui-helper-hidden ui-shadow">
+								<div class="ui-selectonemenu-items-wrapper" style="height: auto">
+									<ul id="j_idt5:j_idt16_items"
+										class="ui-selectonemenu-items ui-selectonemenu-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"
+										role="listbox">
+										<li
+											class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all"
+											data-label="Please Select" tabindex="-1" role="option">Please
+											Select</li>
+										<li
+											class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all"
+											data-label="Add" tabindex="-1" role="option">Add</li>
+										<li
+											class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all"
+											data-label="Sub" tabindex="-1" role="option">Sub</li>
+										<li
+											class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all"
+											data-label="Mul" tabindex="-1" role="option">Mul</li>
+										<li
+											class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all"
+											data-label="Div" tabindex="-1" role="option">Div</li>
+										<li
+											class="ui-selectonemenu-item ui-selectonemenu-list-item ui-corner-all"
+											data-label="Mod" tabindex="-1" role="option">Mod</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<script id="j_idt5:j_idt16_s" type="text/javascript">$(function(){PrimeFaces.cw("SelectOneMenu","widget_j_idt5_j_idt16",{id:"j_idt5:j_idt16",behaviors:{change:function(ext,event) {PrimeFaces.ab({s:"j_idt5:j_idt16",e:"change",p:"j_idt5",u:"j_idt5:resGrid"},ext);}}});});</script></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<br />
+		<input type="hidden" name="javax.faces.ViewState"
+			id="j_id1:javax.faces.ViewState:0"
+			value="1853369763706771080:-8405162637840310849" autocomplete="off" />
+	</form>
+
+</body>
+</html>

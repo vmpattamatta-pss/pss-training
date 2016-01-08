@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>PrimeFaces DB Reader</title>
+</h:head>
+<body>
+	<h:form id="dbLogin">
+		<p:growl id="growl" />
+		<p:panelGrid>
+			<p:row>
+				<p:column>
+					<p:outputLabel value="User Name :" />
+				</p:column>
+				<p:column>
+					<p:inputText id="txtUName" value="#{dBDataReader.uName}" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:outputLabel value="Password :" />
+				</p:column>
+				<p:column>
+					<p:password id="txtPwd" value="#{dBDataReader.pwd}" />
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column colspan="2">
+					<p:commandButton id="btnLogin" action="#{dBDataReader.doLogin}"
+						value="Login" />
+				</p:column>
+			</p:row>
+		</p:panelGrid>
+	</h:form>
+
+</body>
+</html>

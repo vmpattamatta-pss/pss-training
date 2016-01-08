@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>PrimeFaces DB Reader</title>
+</h:head>
+<body>
+	<h:form id="dbGrid">
+		<p:growl id="growl" />
+		<p:panelGrid columns="4">
+			<p:column>
+				<p:outputLabel value="Select Catalog :" />
+			</p:column>
+			<p:column>
+				<p:selectOneMenu id="soCat" value="#{dBDataReader.selSchema}">
+					<p:ajax listener="#{dBDataReader.doCatalogChange}" event="change"
+						update=":dbGrid:soTab" />
+					<f:selectItem itemLabel="Please Select" itemValue="-1" />
+					<f:selectItems value="#{dBDataReader.catalogs}" var="cat"
+						itemLabel="#{cat}" itemValue="#{cat}" />
+				</p:selectOneMenu>
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Select Table :" />
+			</p:column>
+			<p:column>
+				<p:selectOneMenu id="soTab" value="#{dBDataReader.selTable}">
+					<p:ajax listener="#{dBDataReader.doTableChange}" event="change"
+						update=":dbGrid:dtRow" />
+					<f:selectItem itemLabel="Please Select" itemValue="-1" />
+					<f:selectItems value="#{dBDataReader.tables}" var="tab"
+						itemLabel="#{tab}" itemValue="#{tab}" />
+				</p:selectOneMenu>
+			</p:column>
+		</p:panelGrid>
+		<p:dataTable id="dtRow" value="#{dBDataReader.data}" var="row"
+			emptyMessage="No Data Found">
+			<p:column>
+				<p:dataTable id="dtCol" value="#{row}" var="col">
+					<p:column>
+						<p:outputLabel value="#{col}" />
+					</p:column>
+				</p:dataTable>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</body>
+</html>
