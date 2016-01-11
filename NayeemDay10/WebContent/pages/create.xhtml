@@ -1,0 +1,102 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>PrimeFaces Employee Details</title>
+	<script src="http://maps.google.com/maps/api/js?sensor=true"
+		type="text/javascript"></script>
+</h:head>
+<body>
+	<h:form id="empCreateForm">
+		<p:panelGrid columns="2">
+			<p:column>
+				<p:outputLabel value="First Name" />
+			</p:column>
+			<p:column>
+				<p:inputText id="txtFName"
+					value="#{employeeDetailsController.bean.fName}" />
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Last Name" />
+			</p:column>
+			<p:column>
+				<p:inputText id="txtLName"
+					value="#{employeeDetailsController.bean.lName}" />
+			</p:column>
+			<p:column>
+				<p:outputLabel value="DOB" />
+			</p:column>
+			<p:column>
+				<p:calendar id="calDOB"
+					value="#{employeeDetailsController.bean.dob}" showOn="button"
+					pattern="dd-MM-yyyy" />
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Salary" />
+			</p:column>
+			<p:column>
+				<p:inputText id="txtSal"
+					value="#{employeeDetailsController.bean.sal}"></p:inputText>
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Profile Pic" />
+			</p:column>
+			<p:column>
+				<p:fileUpload id="fuProfPic"
+					fileUploadListener="#{employeeDetailsController.handleProfilePicUpload}"
+					mode="single" allowTypes="jpg/png/jpeg" />
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Profile CV" />
+			</p:column>
+			<p:column>
+				<p:fileUpload id="fuProfCv"
+					fileUploadListener="#{employeeDetailsController.handleProfileCvUpload}"
+					mode="single" allowTypes="doc/docx" />
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Description" />
+			</p:column>
+			<p:column>
+				<p:editor id="edDesc" value="#{employeeDetailsController.bean.desc}" />
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Gender" />
+			</p:column>
+			<p:column>
+				<p:selectOneRadio id="sorGender"
+					value="#{employeeDetailsController.bean.gender}">
+					<f:selectItem itemLabel="Male" itemValue="M" />
+					<f:selectItem itemLabel="Female" itemValue="F" />
+				</p:selectOneRadio>
+
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Latitude" />
+			</p:column>
+			<p:column>
+				<p:inputText id="txtLat"
+					value="#{employeeDetailsController.bean.addrLat}"></p:inputText>
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Logitude" />
+			</p:column>
+			<p:column>
+				<p:inputText id="txtLong"
+					value="#{employeeDetailsController.bean.addrLong}"></p:inputText>
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Address" />
+			</p:column>
+			<p:column>
+				<p:inputText id="txtAddr"
+					value="#{employeeDetailsController.bean.addrStr}" />
+			</p:column>
+			<f:facet name="footer">
+				<p:commandButton id="btnCreate" value="Create"
+					action="#{employeeDetailsController.createEmployee}" />
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+</body>
+</html>

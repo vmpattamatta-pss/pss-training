@@ -1,0 +1,47 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>PrimeFaces Employee Details</title>
+</h:head>
+<body>
+	<h:form id="empViewForm">
+		<p:dataTable id="dtEmp" emptyMessage="Employee Records Not Present"
+			value="#{employeeDetailsController.beans}" var="bean"
+			paginator="true" paginatorPosition="bottom"
+			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="5,10,15">
+			<p:column>
+				<f:facet name="header">Emp Id</f:facet>
+				<p:outputLabel value="#{bean.id}" />
+			</p:column>
+			<p:column filterBy="#{bean.fName}" filterMatchMode="contains"
+				sortBy="#{bean.fName}">
+				<f:facet name="header">Emp First Name</f:facet>
+				<p:outputLabel value="#{bean.fName}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Emp Last Name</f:facet>
+				<p:outputLabel value="#{bean.lName}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Emp DOB</f:facet>
+				<p:outputLabel value="#{bean.dob}">
+					<f:convertDateTime dateStyle="long" />
+				</p:outputLabel>
+			</p:column>
+			<p:column>
+				<p:commandButton id="btnEdit" icon="ui-icon-pencil"
+					action="#{employeeDetailsController.showEdit}">
+					<f:setPropertyActionListener value="#{bean}"
+						target="#{employeeDetailsController.bean}" />
+				</p:commandButton>
+			</p:column>
+			<f:facet name="footer">
+				<p:commandButton id="btnShowCreate" value="Create Record"
+					action="#{employeeDetailsController.showCreate}" />
+			</f:facet>
+		</p:dataTable>
+	</h:form>
+</body>
+</html>

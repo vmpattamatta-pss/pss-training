@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14525076170410" configfile="/NayeemDay10/WebContent/WEB-INF/emp-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf14525095085511" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14525095085512 pf14525095224205 pf14525095311877" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/view.xhtml" id="pf14525095085513" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14525095085512" path="/pages/view.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/create.xhtml" id="pf14525095224206" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14525095224205" path="/pages/create.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/edit.xhtml" id="pf14525095311878" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14525095311877" path="/pages/edit.xhtml"/>
+  <links id="pf14525095085512" target="pf14525095085513" source="pf14525095085511" outcome="view"/>
+  <links id="pf14525095224205" target="pf14525095224206" source="pf14525095085511" outcome="create"/>
+  <links id="pf14525095311877" target="pf14525095311878" source="pf14525095085511" outcome="edit"/>
+</pageflow:Pageflow>

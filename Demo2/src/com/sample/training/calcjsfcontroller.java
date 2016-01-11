@@ -19,36 +19,41 @@ public class calcjsfcontroller {
 		complexcalc calc = new complexcalc();
 		switch (model.getOp()) {
 		case 1:
-			result = "Performed Addition on " + model.getIntA() + "," + model.getIntB() + " and the result is :: "
-					+ calc.calculate();
+			int[] calRes = calc.calculate(model.getIntA(), model.getIntB(), model.getIntC(), model.getIntD(), 1);
+			result = "Performed Addition on Complex Number " + model.getIntA() + "+i" + model.getIntB() + " and "
+					+ model.getIntC() + "+i" + model.getIntD() + " and the result is :: " + calRes[0] + "+i"
+					+ calRes[1];
 			retOutcome = "addRes";
 			break;
 		case 2:
-			result = "Performed Substraction on " + model.getIntA() + "," + model.getIntB() + " and the result is :: "
-					+ calc.calculate();
+			int[] calRes = calc.calculate(model.getIntA(), model.getIntB(), model.getIntC(), model.getIntD(), 1);
+			result = "Performed Subtraction on Complex Number " + model.getIntA() + "+i" + model.getIntB() + " and "
+					+ model.getIntC() + "+i" + model.getIntD() + " and the result is :: " + calRes[0] + "+i"
+					+ calRes[1];
 			retOutcome = "subRes";
 			break;
 		case 3:
-			result = "Performed Multiplication on " + model.getIntA() + "," + model.getIntB() + " and the result is :: "
-					+ calc.calculate();
+			int[] calRes = calc.calculate(model.getIntA(), model.getIntB(), model.getIntC(), model.getIntD(), 1);
+			result = "Performed Multiplication on Complex Number " + model.getIntA() + "+i" + model.getIntB() + " and "
+					+ model.getIntC() + "+i" + model.getIntD() + " and the result is :: " + calRes[0] + "+i"
+					+ calRes[1];
 			retOutcome = "mulRes";
 			break;
 		case 4:
-			result = "Performed Division on " + model.getIntA() + "," + model.getIntB() + " and the result is :: "
-					+ calc.calculate();
+			int[] calRes = calc.calculate(model.getIntA(), model.getIntB(), model.getIntC(), model.getIntD(), 1);
+			result = "Performed Division on Complex Number " + model.getIntA() + "+i" + model.getIntB() + " and "
+					+ model.getIntC() + "+i" + model.getIntD() + " and the result is :: " + calRes[0] + "+i"
+					+ calRes[1];
 			retOutcome = "divRes";
 			break;
-		case 5:
-			result = "Performed Modulus on " + model.getIntA() + "," + model.getIntB() + " and the result is :: "
-					+ calc.calculate();
-			retOutcome = "modRes";
-			break;
+		
 		default:
 			result = "Invalid Operation on " + model.getIntA() + "," + model.getIntB();
 			retOutcome = "addRes";
 			break;
 		}
 		return retOutcome;
+
 	}
 
 	public void calculateValue() {
@@ -70,10 +75,7 @@ public class calcjsfcontroller {
 			result = "Performed Division on " + model.getIntA() + "," + model.getIntB() + "," + model.getIntC() + "," + model.getIntD() + " and the result is :: "
 					+ calc.calculate();
 			break;
-		case 5:
-			result = "Performed Modulus on " + model.getIntA() + "," + model.getIntB() + "," + model.getIntC() + "," + model.getIntD() + " and the result is :: "
-					+ calc.calculate();
-			break;
+		
 		default:
 			result = "Invalid Operation on " + model.getIntA() + "," + model.getIntB() + "," + model.getIntC() + "," + model.getIntD();
 			break;
