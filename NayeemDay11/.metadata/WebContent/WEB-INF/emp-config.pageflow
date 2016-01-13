@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14525848012170" configfile="/NayeemDay11/WebContent/WEB-INF/emp-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="562" id="pf14525848275701" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf14525848275712 pf14525848275713 pf14525848275714 pf14525848491028 pf14525848491029 pf145258484910210" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/view.xhtml" x="338" y="178" id="pf14525848275715" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14525848275712" path="/pages/view.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/create.xhtml" x="338" y="562" id="pf14525848275716" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf14525848275713" path="/pages/create.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/edit.xhtml" x="338" y="946" id="pf14525848275727" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14525848275714" path="/pages/edit.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/viewD.xhtml" id="pf145258484910211" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14525848491028" path="/pages/viewD.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/createD.xhtml" id="pf145258484910212" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf14525848491029" path="/pages/createD.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/editD.xhtml" id="pf145258484910213" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf145258484910210" path="/pages/editD.xhtml"/>
+  <links id="pf14525848275712" target="pf14525848275715" source="pf14525848275701" outcome="view"/>
+  <links id="pf14525848275713" target="pf14525848275716" source="pf14525848275701" outcome="create"/>
+  <links id="pf14525848275714" target="pf14525848275727" source="pf14525848275701" outcome="edit"/>
+  <links id="pf14525848491028" target="pf145258484910211" source="pf14525848275701" outcome="viewD"/>
+  <links id="pf14525848491029" target="pf145258484910212" source="pf14525848275701" outcome="createD"/>
+  <links id="pf145258484910210" target="pf145258484910213" source="pf14525848275701" outcome="editD"/>
+</pageflow:Pageflow>

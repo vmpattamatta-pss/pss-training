@@ -1,0 +1,45 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>PrimeFaces Employee Details</title>
+</h:head>
+<body>
+	<h:form id="deptViewForm">
+		<p:dataTable id="dtDept" emptyMessage="Department Records Not Present"
+			value="#{deptController.beans}" var="bean" paginator="true"
+			paginatorPosition="bottom"
+			paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+			rowsPerPageTemplate="5,10,15">
+			<p:column>
+				<f:facet name="header">Dept Id</f:facet>
+				<p:outputLabel value="#{bean.id}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Dept Name</f:facet>
+				<p:outputLabel value="#{bean.name}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Dept Manager</f:facet>
+				<p:selectOneMenu id="somDeptMgr"
+					value="#{deptController.bean.mgrId}">
+					<f:selectItem itemLabel="Please Select" itemValue="" />
+					<f:selectItems itemLabel="#{emp.fName} - #{emp.lName}"
+						itemValue="#{emp.id}" value="#{deptController.emps}" var="emp" />
+				</p:selectOneMenu>
+			</p:column>
+			<p:column>
+				<p:commandButton id="btnEdit" icon="ui-icon-pencil"
+					action="#{deptController.showEdit}">
+					<f:setPropertyActionListener value="#{bean}"
+						target="#{deptController.bean}" />
+				</p:commandButton>
+			</p:column>
+			<f:facet name="footer">
+				<p:commandButton id="btnShowCreate" value="Create Record"
+					action="#{deptController.showCreate}" />
+			</f:facet>
+		</p:dataTable>
+	</h:form>
+</body>
+</html>

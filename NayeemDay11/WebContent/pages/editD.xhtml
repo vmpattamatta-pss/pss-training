@@ -1,0 +1,50 @@
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>PrimeFaces Employee Details</title>
+</h:head>
+<body>
+	<h:form id="deptEditForm">
+		<p:panelGrid columns="2">
+			<p:column>
+				<p:outputLabel value="Dept Id" />
+			</p:column>
+			<p:column>
+				<p:inputText id="txtId" value="#{deptController.bean.id}"
+					disabled="true" />
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Name" />
+			</p:column>
+			<p:column>
+				<p:inputText id="txtName" value="#{deptController.bean.name}" />
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Manager" />
+			</p:column>
+			<p:column>
+				<p:selectOneMenu id="somDeptMgr"
+					value="#{deptController.bean.mgrId}">
+					<f:selectItem itemLabel="Please Select" itemValue="" />
+					<f:selectItems itemLabel="#{emp.fName} - #{emp.lName}"
+						itemValue="#{emp.id}" value="#{deptController.emps}" var="emp" />
+				</p:selectOneMenu>
+			</p:column>
+			<p:column>
+				<p:outputLabel value="Employees" />
+			</p:column>
+			<p:column>
+				<p:pickList id="plEmps" value="#{deptController.pickEmps}"
+					converter="employeeDetailsConverter" var="pickEmp"
+					itemLabel="#{pickEmp.fName} - #{pickEmp.lName}"
+					itemValue="#{pickEmp.id}" />
+			</p:column>
+			<f:facet name="footer">
+				<p:commandButton id="btnEdit" value="Update"
+					action="#{deptController.editDept}" />
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+</body>
+</html>
