@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<TITLE>Calculator Input</TITLE>
+</h:head>
+<BODY>
+	<h:form>
+		<h:panelGrid columns="4">
+			<h:column>
+				<h:outputLabel value="Input A" />
+			</h:column>
+			<h:column>
+				<h:inputText id="inpA1"
+					value="#{calcJSFController.model.ffirstpart}" />
+			</h:column>
+			<h:column>+i</h:column>
+			<h:column>
+				<h:inputText id="inpA2"
+					value="#{calcJSFController.model.fsecondPart}" />
+			</h:column>
+			<h:column>
+				<h:outputLabel value="Input B" />
+			</h:column>
+			<h:column>
+				<h:inputText id="inpB1"
+					value="#{calcJSFController.model.sfirstpart}" />
+			</h:column>
+			<h:column>+i</h:column>
+			<h:column>
+				<h:inputText id="inpB2"
+					value="#{calcJSFController.model.ssecondpart}" />
+			</h:column>
+			<h:column>
+				<h:outputLabel value="Operation" />
+			</h:column>
+			<h:column>
+				<h:selectOneMenu id="somOp" value="#{calcJSFController.model.op}">
+					<f:selectItem itemLabel="Please Select" itemValue="-1" />
+					<f:selectItem itemLabel="Add" itemValue="1" />
+					<f:selectItem itemLabel="Sub" itemValue="2" />
+					<f:selectItem itemLabel="Mul" itemValue="3" />
+					<f:selectItem itemLabel="Div" itemValue="4" />
+				</h:selectOneMenu>
+			</h:column>
+			<h:column>
+			</h:column>
+			<h:column></h:column>
+			<h:column>
+				<h:commandButton id="btnCalc" value="Calculate"
+					action="#{calcJSFController.calculate}" />
+			</h:column>
+		</h:panelGrid>
+	</h:form>
+</BODY>
+</html>
