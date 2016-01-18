@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Rohithday3</display-name>
+  <welcome-file-list>
+    <welcome-file>indexURI.jsp</welcome-file>
+  </welcome-file-list>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>https://www.pss.com/tld/compcalc</taglib-uri>
+      <taglib-location>WEB-INF/tld/compcalc.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+</web-app>
