@@ -6,14 +6,14 @@
 
 	<class name="com.cmsEdge.Beans.Pojo" table="ErrorLogRecords">
 
-		<id name="logId" column="errorid">
+		<id name="logId" column="ErrorId">
 			<generator class="increment"></generator>
 		</id>
-		<property name="date" column="date" type="text" />
-		<property name="level" column="level" type="text" />
-		<property name="location" column="location" type="text" />
-		<property name="blnk" column="blank" type="text"  />
-		<property name="errordesc" column="errordesc" type="text" />
+		<property name="date" column="Date" type="text" />
+		<property name="level" column="Level" type="text" />
+		<property name="location" column="Location" type="text" />
+		<property name="blnk" column="Blank" type="text"  />
+		<property name="errordesc" column="errorDesc" type="text" />
 		<!--  <list name="RecordsList" cascade="all">
          <key column="logId"/>
          <list-index column="idx"/>

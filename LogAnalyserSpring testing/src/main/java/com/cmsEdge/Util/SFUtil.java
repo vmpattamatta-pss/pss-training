@@ -8,7 +8,7 @@ public class SFUtil {
 	private static SessionFactory sessionFactory;
 
 	static {
-		sessionFactory = new Configuration().configure("/com/cmsEdge/config/hibernate.cfg.xml").buildSessionFactory();
+		sessionFactory = new Configuration().configure("/com/cmsEdge/config/LogAnalyzer.cfg.xml").buildSessionFactory();
 	}
 
 	public static SessionFactory getSessionFactory() {
