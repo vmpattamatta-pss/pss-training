@@ -2,6 +2,8 @@ package com.sample.training;
 
 import javax.faces.event.AjaxBehaviorEvent;
 
+import org.jboss.resteasy.util.StringContextReplacement;
+
 public class CalcJSFController {
 	private CalcJSFModel model;
 	private String result;

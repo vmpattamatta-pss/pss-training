@@ -14,7 +14,7 @@ public class EmployeeDetailsDAO {
 
 	private void init() throws Exception {
 		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_training", "root", "password");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_training", "root", "root");
 		conn.setAutoCommit(true);
 	}
 

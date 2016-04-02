@@ -1,6 +1,5 @@
 package com.sample.training;
 
-
 public class CalcJSFModel {
 	private Integer intA;
 	private Integer intB;

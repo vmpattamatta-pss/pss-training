@@ -1,0 +1,35 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.cmsEdge.Beans.Pojo" table="ErrorLogRecords">
+
+		<id name="logId" column="errorid">
+			<generator class="increment"></generator>
+		</id>
+		<property name="date" column="date" type="text" />
+		<property name="level" column="level" type="text" />
+		<property name="location" column="location" type="text" />
+		<property name="blnk" column="blank" type="text"  />
+		<property name="errordesc" column="errordesc" type="text" />
+		<!--  <list name="RecordsList" cascade="all">
+         <key column="logId"/>
+         <list-index column="idx"/>
+         <one-to-many class="com.cmsEdge.Beans.ErrorBean"/>
+      </list> -->
+
+	</class>
+	
+	<!-- <class name="com.cmsEdge.Beans.ErrorBean" table="ErrorList" >
+	<id name="ErrorId" column="errorid">
+		</id>
+		<property name="date" column="date" />
+		<property name="level" column="level" />
+		<property name="location" column="location" />
+		<property name="blank" column="blank" />
+		<property name="errordesc" column="errordesc" type="text" />
+	</class>
+ -->
+</hibernate-mapping>

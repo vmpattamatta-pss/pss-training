@@ -1,16 +1,13 @@
 package com.sample.training;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.DatabaseMetaData;
+import com.mysql.jdbc.ResultSet;
+import com.mysql.jdbc.Statement;
 
 public class DBDataReader {
 	private String uName;

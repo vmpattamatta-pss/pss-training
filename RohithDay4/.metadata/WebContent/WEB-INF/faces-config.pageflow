@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14531021575170" configfile="/Jsfexample/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14531021575170" configfile="/RohithDay4/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="input.xhtml" x="380" y="207" id="pf14531022189413" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14531052519270" path="/input.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="Response.xhtml" x="648" y="207" id="pf14531052519271" inlinks="pf14531052519270" path="/Response.xhtml"/>
-  <links id="pf14531052519270" target="pf14531052519271" source="pf14531022189413" outcome="Res"/>
+  <links id="pf14531052519270" target="pf14531052519271" source="pf14531022189413"/>
 </pageflow:Pageflow>
