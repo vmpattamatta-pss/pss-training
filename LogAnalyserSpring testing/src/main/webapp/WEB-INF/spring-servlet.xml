@@ -19,5 +19,6 @@
 	</bean>
     <bean name="excel" class="com.cmsEdge.view.MyExcelView"/>
     <bean name="pdf" class="com.cmsEdge.view.MyPdfView"/>
+    <bean name="dbPdf" class="com.cmsEdge.view.MyDbPdfView"/>
 	
 </beans>

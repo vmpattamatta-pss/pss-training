@@ -2,6 +2,8 @@ package com.cmsEdge;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,6 +64,7 @@ public class LogController {
 	public ModelAndView insertRecords(){
 		ArrayList<String> RecordsList = errorViewerImpl.execute();
 		insertLogRecordsImpl.insertLog(RecordsList);
+		List errorRecords=insertLogRecordsImpl.readLogs();
 		
 		return new ModelAndView("success");
 
@@ -82,6 +85,14 @@ public class LogController {
 		logger.info("Excel proccess has been started");
 		return new ModelAndView("excel", "tokentlist", tokenList);
 	}
+	@RequestMapping("dbPdf")
+	public ModelAndView dbPdfResponse() {
+		List tokenList=insertLogRecordsImpl.readLogs();
+		logger.info("dbpdf proccess has been started");
+
+		return new ModelAndView("dbPdf", "tokentlist", tokenList);
+	}
+	
 
 	public InsertLogRecordsImpl getInsertLogRecordsImpl() {
 		return insertLogRecordsImpl;

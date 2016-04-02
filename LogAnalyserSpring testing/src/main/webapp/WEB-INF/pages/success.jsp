@@ -8,5 +8,6 @@
 </head>
 <body>
 success
+<a href="dbPdf.cms">PDF Download</a>
 </body>
 </html>
