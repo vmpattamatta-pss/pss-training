@@ -1,44 +1,66 @@
 package com.cmsEdge.view;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.HashMap;
 import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.web.servlet.view.document.AbstractPdfView;
+import javax.servlet.http.HttpSession;
 
-import com.cmsEdge.Beans.Pojo;
-import com.lowagie.text.Document;
-import com.lowagie.text.Table;
-import com.lowagie.text.pdf.PdfNumber;
-import com.lowagie.text.pdf.PdfPCell;
-import com.lowagie.text.pdf.PdfWriter;
+import org.springframework.stereotype.Service;
 
-public class MyDbPdfView extends AbstractPdfView {
-
-	@Override
-	protected void buildPdfDocument(Map tokenList, Document doc, PdfWriter writer, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		ArrayList<String> tokens = (ArrayList<String>) tokenList.get("tokentlist");
-		Table table = new Table(6);
-		PdfPCell cell = new PdfPCell();
-		cell.setFixedHeight(30f);
-		table.addCell("ErrorId");
-		table.addCell("Date&Time");
-		table.addCell("Level");
-		table.addCell("Location");
-		table.addCell("");
-		table.addCell("Error Description");
-		
-		float[] columnWidths = new float[] { 17f, 3.09f, 25f, 0.1f, 54f };
-		table.setWidths(columnWidths);
-		Iterator itr = tokens.iterator();
-		while (itr.hasNext()) {
-			Pojo p = (Pojo) itr.next();
-		
-		//	table.addCell(value);
+import net.sf.jasperreports.engine.JRResultSetDataSource;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+@Service
+public class MyDbPdfView {
+	public JRResultSetDataSource readDbLogs(HttpServletResponse response, HttpSession session) throws ServletException,Exception {
+		Connection con=null;
+		Statement st=null;
+		Map params=null;
+		JRResultSetDataSource rsdt=null;
+		String logName = (String) session.getAttribute("logname");
+		String tableName=logName;
+		//response.setContentType("application/x-pdf");
+		//response.setHeader("Content-Disposition", "attachment; filename=ErrorLogReport.pdf");
+		try {
+			ServletOutputStream sos = response.getOutputStream();
+			Class.forName("com.mysql.jdbc.Driver");
+			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/loganalyzer", "root", "root");
+			st = con.createStatement();
+			 ResultSet rs= st.executeQuery("SELECT *  FROM "+tableName+";");
+			  rsdt=new JRResultSetDataSource(rs);
+			JasperDesign design = JRXmlLoader.load(
+					"E:/work/git/pss-training1/LogAnalyserSpring testing/src/main/java/com/cmsEdge/config/test1.jrxml");
+			JasperReport jasperReport = JasperCompileManager.compileReport(design);
+			 params = new HashMap();
+			params.put("rsdt","rsdt");
+			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, rsdt);
+			byte[] pdfbytes = JasperExportManager.exportReportToPdf(jasperPrint);
+			sos.write(pdfbytes);
+			sos.close();
+		} catch (Exception exception) {
+			exception.printStackTrace();
 		}
-		doc.add(table);
+		finally {
+			if (con != null) {
+				try { con.close(); 
+				} 
+				catch (Exception e) {}
+			}
+			
+		}
+		return rsdt;
 	}
 
 }

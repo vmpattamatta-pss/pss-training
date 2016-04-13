@@ -1,17 +1,20 @@
 package com.cmsEdge.Beans;
 
-public class ErrorBean {
-	private String errors,date,level,location,blank,errordesc;
-private int ErrorId;
-	public ErrorBean(String date, String level, String location, String blank, String errordesc) {
-		super();
-		
-		this.date = date;
-		this.level = level;
-		this.location = location;
-		this.blank = blank;
-		this.errordesc = errordesc;
+import java.util.List;
+
+public class JEVgnVCMruntimeBean {
+	private int logId;
+	private List<String> RecordsList;
+	private String errors,date,level,location,blnk,errordesc;
+
+	public int getLogId() {
+		return logId;
 	}
+
+	public void setLogId(int logId) {
+		this.logId = logId;
+	}
+
 
 	public String getErrors() {
 		return errors;
@@ -45,12 +48,12 @@ private int ErrorId;
 		this.location = location;
 	}
 
-	public String getBlank() {
-		return blank;
+	public String getBlnk() {
+		return blnk;
 	}
 
-	public void setBlank(String blank) {
-		this.blank = blank;
+	public void setBlnk(String blnk) {
+		this.blnk = blnk;
 	}
 
 	public String getErrordesc() {
@@ -61,14 +64,15 @@ private int ErrorId;
 		this.errordesc = errordesc;
 	}
 
-	public int getErrorId() {
-		return ErrorId;
+	public List<String> getRecordsList() {
+		return RecordsList;
 	}
 
-	public void setErrorId(int errorId) {
-		this.ErrorId = errorId;
+	public void setRecordsList(List<String> recordsList) {
+		RecordsList = recordsList;
 	}
 
-	
+
+
 
 }

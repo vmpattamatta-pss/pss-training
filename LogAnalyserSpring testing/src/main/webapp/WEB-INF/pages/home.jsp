@@ -5,14 +5,17 @@
 <html>
 <head>
 <title>Home</title>
-<link rel="stylesheet" type="text/css" href="/LogAnalyserSpring/css/mystyle.css">
+<link rel="stylesheet" type="text/css"
+	href="/LogAnalyserSpring/css/mystyle.css">
 <script src="https://code.jquery.com/jquery-3.0.0-alpha1.js"></script>
 <script>
 	window.jQuery
-			|| document.write("<script src='/com/cmsEdge/config/jquery-2.1.4.min.js'><\/script>");
+			|| document
+					.write("<script src='/com/cmsEdge/config/jquery-2.1.4.min.js'><\/script>");
 </script>
 
-<script type="text/javascript" src="/LogAnalyserSpring/js/jqueryUtils.js">
+<script type="text/javascript"
+	src="/LogAnalyserSpring/js/jqueryUtils.js">
 	
 </script>
 </head>
@@ -23,18 +26,25 @@
 		enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td>Select a File</td><td>
-				<input id="file" name="uploadFile" type="file"
-					required="required" />
-				</td>
+				<td>Select a File</td>
+				<td><input id="file" name="uploadFile" type="file"
+					required="required" /></td>
 
 			</tr>
 			<tr>
-				<td>Select Date of a Uploading File</td>
+				<td>Date of a Uploading File</td>
 				<td><input id="date" name="dtUploadFile" type="date" /></td>
 			</tr>
 			<tr>
-				<td></td>
+				<td>select log file type</td>
+				<td><select name="logname">
+						<option value="VgnVCMruntime">VgnVCM-runtime</option>
+						<option value="JEVgnVCMruntime">JE-VgnVCM1-runtime</option>
+						<option value="vgninstruntime">vgninst-runtime</option>
+						<option value="proddelruntime">prod-del1-runtime</option>
+						<option value="Appsvcsruntime">Appsvcs-runtime</option>
+				</select></td></tr>
+				<tr><td></td>
 				<td><input id="submit" type="submit" value="Upload Log Details" /></td>
 			</tr>
 		</table>

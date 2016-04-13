@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="
    http://www.springframework.org/schema/beans     
    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+   http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd 
    http://www.springframework.org/schema/context 
    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 	<context:component-scan base-package="com.cmsEdge" />
-	<context:annotation-config/>
-    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	<context:annotation-config />
+	<mvc:annotation-driven />
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	<bean id="pdfReport"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView" 
+		p:url="classpath:test1.jrxml" p:reportDataKey="ds"/>
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-    <bean name="excel" class="com.cmsEdge.view.MyExcelView"/>
-    <bean name="pdf" class="com.cmsEdge.view.MyPdfView"/>
-    <bean name="dbPdf" class="com.cmsEdge.view.MyDbPdfView"/>
-	
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="/WEB-INF/messages" />
+
+	</bean>
+
+	<!-- <bean name="excel" class="com.cmsEdge.view.MyExcelView"/> -->
+	<bean name="pdf" class="com.cmsEdge.view.MyPdfView" />
+	<bean name="vgninstpdf" class="com.cmsEdge.view.MyVgnInstPdfView" />
+
+
 </beans>

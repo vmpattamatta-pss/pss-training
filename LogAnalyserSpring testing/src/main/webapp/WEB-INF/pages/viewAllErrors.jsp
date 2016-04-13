@@ -14,14 +14,13 @@
 </head>
 <body>
  <p>Error file " ${errFile} " is created successfully.<br>
+ <p>To view result in different formats click below links</p> 
+<a href="pdf.cms">VgnVcm or JEVgnVcm PDF </a>
+<a href="pdf.cms">VgnInstRuntime PDF </a>
+<a href="excel.cms">Excel Download</a>
 To store errors into the database click below button 
  <form action="insert.cms">
  <input id="submit" type="submit" name="insert" value="Insert Error Records" >
  </form>
- 
- <p>To view result in different formats click below links</p> 
-<a href="pdf.cms">PDF Download</a>
-<a href="excel.cms">Excel Download</a>
-
 </body>
 </html>

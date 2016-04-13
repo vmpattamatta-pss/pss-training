@@ -14,7 +14,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.springframework.web.servlet.view.document.AbstractExcelView;
 
-public class MyExcelView extends AbstractExcelView {
+public class MyExcelView extends AbstractExcelView{
 
 	@Override
 	protected void buildExcelDocument(Map tokenList, HSSFWorkbook wb, HttpServletRequest request,
